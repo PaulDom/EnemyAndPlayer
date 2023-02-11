@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float speed;
+    public float speed = 3;
     public Transform target;
     public int playerDamage = 2;
 
