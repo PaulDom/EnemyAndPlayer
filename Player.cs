@@ -6,28 +6,24 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     private int health = 10;
-    //сцена перезагрузки
-    public string sceneload;
-    //Объект, отвечающий за проигрывание звука
-    public AudioSource audioSource;
-    //Звуковой файл, содержащий звук урона
+    public AudioSource source;
     public AudioClip damageSound;
 
 
-    //Метод, понижающий здоровье игрока
     public void TakeDamage(int damage)
     {
         health -= damage;
 
         if (health > 0)
         {
-            print("Здоровье игрока: " + health);
-            audioSource.PlayOneShot(damageSound);
+            print("Столько то здоровья" + health);
+            source.PlayOneShot(damageSound);
         }
         else
         {
-            SceneManager.LoadScene(sceneload);
+            int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(sceneIndex);
+
         }
     }
 }
-
