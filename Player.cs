@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    private int health = 10;
+    public int health = 10;
+    public int max_health = 10;
     public AudioSource source;
     public AudioClip damageSound;
 
@@ -16,7 +17,7 @@ public class Player : MonoBehaviour
 
         if (health > 0)
         {
-            print("Столько то здоровья" + health);
+            print("Количество здоровья" + health);
             source.PlayOneShot(damageSound);
         }
         else
